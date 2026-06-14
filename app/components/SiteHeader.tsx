@@ -148,17 +148,13 @@ const navMenus = [
   },
   {
     label: "EN",
-    href: "/en",
+    href: "#language",
     kicker: "Languages",
-    title: "English main site with global buyer support.",
-    cta: "English site",
-    preview: [
-      { title: "Showroom", image: "/assets/supplemental/hat-showroom-wall.jpg", alt: "Aung Crown showroom for global buyers" },
-      { title: "Global", image: "/assets/supplemental/exhibitions-collage.jpg", alt: "Aung Crown global markets and exhibitions" }
-    ],
+    title: "Choose a market language.",
+    cta: "Current: English",
+    preview: [],
     columns: [
-      { title: "Languages", links: ["EN", "FR", "DE", "ES"] },
-      { title: "Markets", links: ["United States", "Europe", "Asia"] }
+      { title: "Language", links: ["EN", "FR", "DE", "ES"] }
     ]
   }
 ];
@@ -191,6 +187,15 @@ export function SiteHeader() {
             <a className="nav-link" href={menu.href} aria-haspopup="true">
               {menu.label}
             </a>
+            {menu.label === "EN" ? (
+              <div className="language-popover" aria-label="Language menu">
+                {["EN", "FR", "DE", "ES"].map((language) => (
+                  <a href="#language" key={language}>
+                    {language}
+                  </a>
+                ))}
+              </div>
+            ) : (
             <div className="mega-menu" aria-label={`${menu.label} mega menu`}>
               <div className="mega-feature">
                 <span>{menu.kicker}</span>
@@ -200,16 +205,18 @@ export function SiteHeader() {
                   <ArrowIcon />
                 </a>
               </div>
-              <div className="mega-product-strip">
-                {menu.preview.map((item) => (
-                  <a className="mega-product" href={menu.href} key={item.title}>
-                    <span className="mega-product-image">
-                      <Image src={item.image} alt={item.alt} fill sizes="160px" />
-                    </span>
-                    <span>{item.title}</span>
-                  </a>
-                ))}
-              </div>
+              {menu.preview.length ? (
+                <div className="mega-product-strip">
+                  {menu.preview.map((item) => (
+                    <a className="mega-product" href={menu.href} key={item.title}>
+                      <span className="mega-product-image">
+                        <Image src={item.image} alt={item.alt} fill sizes="160px" />
+                      </span>
+                      <span>{item.title}</span>
+                    </a>
+                  ))}
+                </div>
+              ) : null}
               <div className="mega-columns">
                 {menu.columns.map((column) => (
                   <div className="mega-column" key={column.title}>
@@ -223,6 +230,7 @@ export function SiteHeader() {
                 ))}
               </div>
             </div>
+            )}
           </div>
         ))}
       </nav>

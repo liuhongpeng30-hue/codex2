@@ -181,6 +181,65 @@ textarea {
   visibility: visible;
 }
 
+.language-popover {
+  backdrop-filter: blur(22px) saturate(1.15);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  left: 50%;
+  opacity: 0;
+  padding: 12px;
+  pointer-events: none;
+  position: fixed;
+  top: 82px;
+  transform: translateX(-50%) translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  visibility: hidden;
+  width: 260px;
+  z-index: 25;
+}
+
+.language-popover::before {
+  content: "";
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -18px;
+}
+
+.nav-with-mega:hover .language-popover,
+.nav-with-mega:focus-within .language-popover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+}
+
+.language-popover a {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 42px;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.language-popover a:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  transform: translateY(-1px);
+}
+
 .mega-feature {
   background:
     linear-gradient(135deg, #070707 0%, #111 54%, #24200d 100%);

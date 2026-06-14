@@ -10,50 +10,50 @@ export const metadata: Metadata = {
 
 const hatProducts = [
   {
-    title: "Custom Snapback Hats",
-    image: "/assets/catalog/embroidery-effect.png",
-    desc: "Structured flat-brim caps for streetwear, sports merch and retail drops.",
-    tags: ["Embroidery", "Patches", "Private label"]
+    title: "Custom Performance Caps",
+    image: "/assets/supplemental/laser-perforated-rubber-patch-cap.png",
+    desc: "Laser-perforated caps with rubber patches for sports, golf and lifestyle brands.",
+    tags: ["Perforated", "Rubber patch", "Performance"]
   },
   {
-    title: "Custom Trucker Hats",
-    image: "/assets/catalog/factory-overview.png",
-    desc: "Mesh-back caps with logo embroidery, woven patches and foam front options.",
-    tags: ["Mesh back", "Foam front", "Patch logo"]
+    title: "Suede Trucker Hats",
+    image: "/assets/supplemental/red-suede-trucker-patch.jpg",
+    desc: "Mesh-back trucker hats with soft suede fabric and embroidered patch branding.",
+    tags: ["Mesh back", "Suede", "Patch logo"]
   },
   {
-    title: "Custom Baseball Caps",
-    image: "/assets/catalog/apparel-grid.png",
-    desc: "Classic custom caps for brands, teams, distributors and corporate programs.",
-    tags: ["Cotton", "Curved brim", "Low MOQ"]
+    title: "Wool Snapback Hats",
+    image: "/assets/supplemental/lime-wool-snapback.jpg",
+    desc: "Structured wool snapbacks with raised embroidery for teams and fashion drops.",
+    tags: ["Wool", "Flat brim", "Embroidery"]
   },
   {
-    title: "Custom Dad Hats",
-    image: "/assets/catalog/tracksuits.png",
-    desc: "Unstructured casual caps with washed cotton, embroidery and metal buckle options.",
-    tags: ["Unstructured", "Washed fabric", "Embroidery"]
+    title: "Colorway Snapback Sets",
+    image: "/assets/supplemental/stacked-wool-snapbacks.jpg",
+    desc: "Multi-color custom hat programs for seasonal retail collections and brand launches.",
+    tags: ["Colorways", "Retail sets", "Sampling"]
   },
   {
-    title: "Custom Bucket Hats",
-    image: "/assets/catalog/tees-polos.png",
+    title: "Printed 5-Panel Caps",
+    image: "/assets/supplemental/eco-printed-canvas-front.jpg",
     desc: "Outdoor, festival and fashion headwear with all-over print or woven label branding.",
     tags: ["Printed", "Outdoor", "Fashion"]
   },
   {
-    title: "Custom 5 Panel Hats",
-    image: "/assets/catalog/hoodie-hero.png",
+    title: "Outdoor 5-Panel Hats",
+    image: "/assets/supplemental/eco-printed-canvas-5-panel.jpg",
     desc: "Lightweight profile caps for lifestyle brands, cycling, outdoor and promotion lines.",
     tags: ["5-panel", "Webbing", "Lifestyle"]
   },
   {
-    title: "Custom Beanies",
-    image: "/assets/catalog/pants-cargo.png",
-    desc: "Knit beanies with jacquard, cuff embroidery, woven labels and yarn selection.",
-    tags: ["Knit", "Jacquard", "Cuff logo"]
+    title: "Embroidered Patch Trucker Hats",
+    image: "/assets/supplemental/red-trucker-front.jpg",
+    desc: "Classic trucker caps with front embroidery patches for streetwear and events.",
+    tags: ["Trucker", "Embroidery", "Event merch"]
   },
   {
-    title: "Private Label Hats",
-    image: "/assets/catalog/coat-workwear.png",
+    title: "Perforated Private Label Caps",
+    image: "/assets/supplemental/laser-perforated-side.png",
     desc: "End-to-end private label headwear with trims, tags, packaging and shipment support.",
     tags: ["Hang tags", "Packaging", "Brand program"]
   }
@@ -108,8 +108,8 @@ export default function HatsProductPage() {
         </div>
         <div className="product-hero-media">
           <Image
-            src="/assets/catalog/embroidery-effect.png"
-            alt="Custom embroidered hat and apparel logo craft"
+            src="/assets/supplemental/stacked-wool-snapbacks.jpg"
+            alt="Stacked custom wool snapback hats"
             fill
             priority
             sizes="(max-width: 900px) 100vw, 48vw"
