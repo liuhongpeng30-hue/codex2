@@ -124,82 +124,109 @@ textarea {
   align-items: center;
   display: inline-flex;
   height: 92px;
+  position: relative;
 }
 
-.mega-menu {
-  backdrop-filter: blur(28px) saturate(1.2);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(250, 248, 242, 0.84)),
-    radial-gradient(circle at 12% 0%, rgba(245, 214, 72, 0.2), transparent 28%),
-    radial-gradient(circle at 82% 100%, rgba(17, 17, 17, 0.08), transparent 32%);
-  border: 1px solid rgba(255, 255, 255, 0.82);
+.simple-menu {
+  backdrop-filter: blur(18px) saturate(1.12);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 8px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.18);
   color: var(--ink);
   display: grid;
-  gap: 18px;
-  grid-template-columns: 300px 310px 1fr;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
   left: 50%;
-  max-width: calc(100vw - 72px);
+  min-width: 260px;
   opacity: 0;
-  padding: 20px;
+  padding: 14px;
   pointer-events: none;
-  position: fixed;
-  top: 82px;
-  transform: translateX(-50%) translateY(12px);
+  position: absolute;
+  top: 78px;
+  transform: translateX(-50%) translateY(8px);
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
   visibility: hidden;
-  width: min(1000px, calc(100vw - 72px));
+  width: max-content;
   white-space: normal;
   z-index: 25;
 }
 
-.mega-menu::before {
+.simple-menu::before {
   content: "";
-  height: 22px;
+  height: 16px;
   left: 0;
   position: absolute;
   right: 0;
-  top: -18px;
+  top: -14px;
 }
 
-.mega-menu::after {
-  background: linear-gradient(90deg, transparent, rgba(245, 214, 72, 0.9), transparent);
-  content: "";
-  height: 1px;
-  left: 22px;
-  position: absolute;
-  right: 22px;
-  top: 0;
-}
-
-.nav-with-mega:hover .mega-menu,
-.nav-with-mega:focus-within .mega-menu {
+.nav-with-mega:hover .simple-menu,
+.nav-with-mega:focus-within .simple-menu {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
   visibility: visible;
 }
 
+.desktop-nav:has(.nav-language:hover) .simple-menu,
+.desktop-nav:has(.nav-language:focus-within) .simple-menu {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.simple-menu-column {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.simple-menu-column h3 {
+  color: #1f1f1f;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.simple-menu-column a {
+  border-radius: 6px;
+  color: #333;
+  display: block;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.2;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+.simple-menu-column a:hover {
+  background: #f5d648;
+  color: #0b0b0b;
+}
+
 .language-popover {
-  backdrop-filter: blur(22px) saturate(1.15);
-  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px) saturate(1.12);
+  background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.82);
   border-radius: 8px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.18);
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   left: 50%;
   opacity: 0;
-  padding: 12px;
+  padding: 10px;
   pointer-events: none;
-  position: fixed;
-  top: 82px;
-  transform: translateX(-50%) translateY(10px);
+  position: absolute;
+  top: 78px;
+  transform: translateX(-50%) translateY(8px);
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
   visibility: hidden;
-  width: 260px;
+  width: 76px;
   z-index: 25;
 }
 
@@ -230,7 +257,7 @@ textarea {
   font-size: 13px;
   font-weight: 900;
   justify-content: center;
-  min-height: 42px;
+  min-height: 36px;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
