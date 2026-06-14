@@ -108,8 +108,8 @@ export default function HatsProductPage() {
         </div>
         <div className="product-hero-media">
           <Image
-            src="/assets/supplemental/stacked-wool-snapbacks.jpg"
-            alt="Stacked custom wool snapback hats"
+            src="/assets/supplemental/laser-perforated-rubber-patch-cap.png"
+            alt="Custom performance cap with laser perforation and rubber patch"
             fill
             priority
             sizes="(max-width: 900px) 100vw, 48vw"

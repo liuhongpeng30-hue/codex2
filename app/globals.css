@@ -2610,8 +2610,8 @@ textarea {
 
 .product-hero {
   background:
-    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.94) 46%, rgba(255, 255, 255, 0.44) 100%),
-    radial-gradient(circle at 12% 10%, rgba(245, 214, 72, 0.16), transparent 28%);
+    linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.96) 48%, rgba(245, 245, 241, 0.74) 100%),
+    radial-gradient(circle at 12% 10%, rgba(245, 214, 72, 0.12), transparent 28%);
   display: grid;
   grid-template-columns: 52% 48%;
   min-height: 520px;
@@ -2666,13 +2666,17 @@ textarea {
 }
 
 .product-hero-media {
+  background:
+    radial-gradient(circle at 58% 46%, rgba(245, 214, 72, 0.1), transparent 30%),
+    #fff;
   min-height: 520px;
   position: relative;
 }
 
 .product-hero-media img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  padding: 46px 38px;
 }
 
 .product-shell {
@@ -3736,5 +3740,9 @@ textarea {
 
   .product-hero-actions {
     display: grid;
+  }
+
+  .product-hero-actions .button-light {
+    display: none;
   }
 }
